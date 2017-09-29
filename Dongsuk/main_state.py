@@ -25,7 +25,6 @@ class Grass:
         self.image.draw(400, 30)
 
 
-
 class Boy:
     def __init__(self):
         self.x, self.y = 0, 90

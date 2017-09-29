@@ -3,7 +3,7 @@ import main_state
 from pico2d import *
 
 
-name = "TitleState"
+name = "Nom 2017"
 image = None
 
 

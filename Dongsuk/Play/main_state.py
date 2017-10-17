@@ -36,7 +36,7 @@ class Grass:
 class Boy:
 
     def __init__(self):
-        self.x, self.y = 50, 95
+        self.x, self.y = 70, 95
         self.frame = 0
         self.time = 0
         self.time2 = 0

@@ -39,6 +39,7 @@ class Boy:
         self.x, self.y = 50, 95
         self.frame = 0
         self.time = 0
+        self.time2 = 0
         self.image = load_image('Resource/animation_sheet.png')
         self.dir = 1
         self.state = 0
@@ -49,11 +50,14 @@ class Boy:
             if self.state == 0:
                 self.state = 1
                 self.time = 0
+            elif self.state == 1:
+                self.state = 2
+                self.time2 = 0
 
     def update(self):
         self.frame = (self.frame + 1) % 8
         self.time = self.time + 1
-
+        self.time2 = self.time2 + 1
         if self.y < 95:
             self.y = 95
             self.state = 0
@@ -63,6 +67,11 @@ class Boy:
             if self.y < 95:
                 self.y = 95
                 self.state = 0
+        if self.state == 2:
+            self.y = self.y + 20 - 9.8*self.time2/3
+            if self.y < 95 :
+               self.y = 95
+               self.state = 0
     def draw(self):
         self.image.clip_draw((self.frame * 100), 0, 100, 100, self.x, self.y)
 

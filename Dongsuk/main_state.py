@@ -29,7 +29,7 @@ class Boy:
     def __init__(self):
         self.x, self.y = 0, 90
         self.frame = 0
-        self.image = load_image('run_animation.png')
+        self.image = load_image('Running.png')
         self.dir = 1
 
     def update(self):

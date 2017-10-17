@@ -1,6 +1,7 @@
 import random
 import json
 import os
+import Resource
 
 from pico2d import *
 
@@ -15,20 +16,20 @@ boy = None
 grass = None
 font = None
 
-
-
 class Grass:
     def __init__(self):
-        self.image = load_image('grass.png')
-
+        self.image = load_image('Resource/grass2.png')
+        self.frame = 0
+    def update(self):
+        self.frame = (self.frame + 1)%8
     def draw(self):
-        self.image.draw(400, 30)
+        self.image.clip_draw(self.frame *100, 0, 800, 70 ,400, 30)
 
 class Boy:
     def __init__(self):
         self.x, self.y = 0, 90
         self.frame = 0
-        self.image = load_image('animation_sheet.png')
+        self.image = load_image('Resource/animation_sheet.png')
         self.dir = 1
 
     def update(self):
@@ -72,6 +73,7 @@ def handle_events():
 
 def update():
     boy.update()
+    grass.update()
     pass
 
 def draw():
@@ -79,4 +81,5 @@ def draw():
     grass.draw()
     boy.draw()
     update_canvas()
+    delay(0.05)
     pass

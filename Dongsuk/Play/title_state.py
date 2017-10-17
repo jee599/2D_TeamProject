@@ -1,5 +1,6 @@
 import game_framework
 import main_state
+import Resource
 from pico2d import *
 
 name = "TitleState"
@@ -7,7 +8,7 @@ image = None
 
 def enter():
     global image
-    image = load_image('title.png')
+    image = load_image('Resource/title.png')
     pass
 
 def exit():

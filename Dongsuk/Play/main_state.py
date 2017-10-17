@@ -14,6 +14,12 @@ boy = None
 grass = None
 font = None
 
+class Back:
+    def __init__(self):
+        self.image = load_image('Resource/Prison.png')
+    def draw(self):
+        self.image.draw(400,300)
+
 class Grass:
     def __init__(self):
         self.image = load_image('Resource/grass2.png')
@@ -25,7 +31,7 @@ class Grass:
 
 class Boy:
     def __init__(self):
-        self.x, self.y = 50, 80
+        self.x, self.y = 50, 90
         self.frame = 0
         self.image = load_image('Resource/animation_sheet.png')
         self.dir = 1
@@ -38,12 +44,13 @@ class Boy:
             self.dir = 1
 
     def draw(self):
-        self.image.clip_draw((self.frame * 100), 10, 90, 80, self.x, self.y)
+        self.image.clip_draw((self.frame * 100), 0, 100, 100, self.x, self.y)
 
 def enter():
-    global boy, grass
+    global boy, grass, back
     boy = Boy()
     grass = Grass()
+    back = Back()
     pass
 
 def exit():
@@ -75,8 +82,9 @@ def update():
 
 def draw():
     clear_canvas()
-    grass.draw()
+    back.draw()
     boy.draw()
+    grass.draw()
     update_canvas()
     delay(0.09)
     pass

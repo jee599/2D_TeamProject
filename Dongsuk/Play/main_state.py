@@ -8,8 +8,6 @@ from pico2d import *
 import game_framework
 import title_state
 
-
-
 name = "MainState"
 
 boy = None
@@ -27,21 +25,20 @@ class Grass:
 
 class Boy:
     def __init__(self):
-        self.x, self.y = 0, 90
+        self.x, self.y = 50, 80
         self.frame = 0
         self.image = load_image('Resource/animation_sheet.png')
         self.dir = 1
 
     def update(self):
         self.frame = (self.frame + 1) % 8
-        self.x += self.dir
         if self.x >= 800:
             self.dir = -1
         elif self.x <= 0:
             self.dir = 1
 
     def draw(self):
-        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
+        self.image.clip_draw((self.frame * 100), 10, 90, 80, self.x, self.y)
 
 def enter():
     global boy, grass
@@ -81,5 +78,5 @@ def draw():
     grass.draw()
     boy.draw()
     update_canvas()
-    delay(0.05)
+    delay(0.09)
     pass

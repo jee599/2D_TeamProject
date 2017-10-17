@@ -1,11 +1,9 @@
-import random
 import json
+import random
 from pico2d import*
 
-def handle_event():
+def handle_events():
     global running
-    global boy
-
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -24,11 +22,13 @@ def create_team():
     }
 
     player_state_table = {
-        "LEFT_RUN" : boy.handle_left_run,
-        "RIGHT_RUN" : boy.handle_right_run,
-        "LEFT_STAND" : boy.handle_left_stand,
-        "RIGHT_STAND" : boy.handle_right_stand
+        "LEFT_RUN" : Boy.LEFT_RUN,
+        "RIGHT_RUN" : Boy.RIGHT_RUN,
+        "LEFT_STAND" : Boy.LEFT_STAND,
+        "RIGHT_STAND" : Boy.RIGHT_STAND
     }
+
+    #team_data = json.loads(team_data_text)
 
     team_data_file = open('team_data.txt', 'r')
     team_data = json.load(team_data_file)
@@ -49,6 +49,7 @@ def create_team():
 class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
+
     def draw(self):
         self.image.draw(400, 30)
 
@@ -58,15 +59,22 @@ class Boy:
     LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND = 0, 1, 2, 3
 
     def __init__(self):
-        self.x = random.randint(100, 700),90
-        self.y = random.randint(100, 600),90
+        self.x, self.y = random.randint(100, 700),90
         self.frame = random.randint(0, 7)
-        self.run_frame = 0
         self.run_frame = 0
         self.name = 'noname'
         self.state = self.RIGHT_RUN
+
         if Boy.image == None:
-            self.image = load_image('run_animation.png')
+            self.image = load_image('animation_sheet.png')
+
+    def update(self):
+        self.frame = (self.frame + 1) % 8
+        self.handle_state[self.state](self)
+        if self.state == self.RIGHT_RUN:
+            self.x = min(800, self.x + 5)
+        elif self.state == self.LEFT_RUN:
+            self.x = max(0, self.x - 5)
 
     def handle_event(self, event):
 
@@ -84,29 +92,20 @@ class Boy:
                 if self.state in (self.RIGHT_STAND, self.LEFT_STAND):
                     self.state = self.LEFT_STAND
 
-    def update(self):
-        self.frame = (self.frame + 1) % 8
-        if self.state == self.RIGHT_RUN:
-            self.x = min(800, self.x + 5)
-        elif self.state == self.LEFT_RUN:
-            self.x = max(0, self.x - 5)
-
     def handle_left_run(self):
         self.x -= 3
-        self.run_frame +=1
+        self.run_frame += 1
         if self.x < 0:
             self.state = self.RIGHT_RUN
             self.x = 0
         elif self.run_frame == 100:
             self.state = self.LEFT_STAND
             self.stand_frame = 0
-
     def handle_left_stand(self):
         self.stand_frame += 1
         if self.stand_frame == 50:
             self.state = self.LEFT_RUN
             self.run_frame = 0
-
     def handle_right_run(self):
         self.x += 3
         self.run_frame +=1
@@ -116,13 +115,11 @@ class Boy:
         if self.run_frame == 100:
             self.state = self.RIGHT_STAND
             self.stand_frame = 0
-
     def handle_right_stand(self):
         self.stand_frame += 1
         if self.stand_frame == 50:
             self.state = self.RIGHT_RUN
             self.run_frame = 0
-
     handle_state = {
         LEFT_RUN : handle_left_run,
         RIGHT_RUN : handle_right_run,
@@ -133,23 +130,25 @@ class Boy:
         self.image.clip_draw(self.frame*100, self.state*100, 100, 100, self.x, self.y)
 
 def main():
+
     open_canvas()
-    boy = Boy()
     grass = Grass()
     running = True
+    team = create_team()
 
     while running:
-        handle_event()
+        handle_events()
 
-        boy.update()
+        for player in team:
+            player.update()
         clear_canvas()
         grass.draw()
-        boy.draw()
+        for player in team:
+            player.draw()
         update_canvas()
 
         delay(0.05)
     close_canvas()
-
 
 if __name__== '__main__':
     main()

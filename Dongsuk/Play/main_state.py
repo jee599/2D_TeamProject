@@ -24,6 +24,21 @@ class Back:
     def draw(self):
         self.image.draw(400,300)
 
+class Object:
+    def __init__(self):
+        self.image = load_image('Resource/bat.png')
+        self.frame = 0
+        self.x = 800
+        self.speed = 5
+        self.y = random.randint(0,7) * 100
+    def update(self):
+        self.frame = (self.frame + 1)%8
+        self.x = self.x - self.speed
+        if self.x < x :
+            self.x = 800
+    def draw(self):
+        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
+
 class Grass:
     def __init__(self):
         self.image = load_image('Resource/grass2.png')
@@ -35,6 +50,7 @@ class Grass:
 
 class Boy:
 
+    global x
     def __init__(self):
         self.x, self.y = 70, 95
         self.frame = 0
@@ -43,7 +59,7 @@ class Boy:
         self.image = load_image('Resource/animation_sheet.png')
         self.dir = 1
         self.state = 0
-
+        x = self.x
     def handle_event(self, event):
 
         if (event.type, event.key) == (SDL_KEYDOWN, SDLK_UP):
@@ -80,12 +96,15 @@ def enter():
     boy = Boy()
     grass = Grass()
     back = Back()
+    object = Object()
     pass
 
 def exit():
     global boy, grass
     del(boy)
     del(grass)
+    del(back)
+    del(object)
     pass
 
 def pause():
@@ -109,6 +128,7 @@ def handle_events():
 def update():
     boy.update()
     grass.update()
+    object.update()
     pass
 
 def draw():
@@ -116,6 +136,7 @@ def draw():
     back.draw()
     boy.draw()
     grass.draw()
+    object.draw()
     update_canvas()
     delay(0.09)
     pass

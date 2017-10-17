@@ -24,12 +24,11 @@ class Grass:
     def draw(self):
         self.image.draw(400, 30)
 
-
 class Boy:
     def __init__(self):
         self.x, self.y = 0, 90
         self.frame = 0
-        self.image = load_image('Running.png')
+        self.image = load_image('animation_sheet.png')
         self.dir = 1
 
     def update(self):
@@ -43,13 +42,11 @@ class Boy:
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
 
-
 def enter():
     global boy, grass
     boy = Boy()
     grass = Grass()
     pass
-
 
 def exit():
     global boy, grass
@@ -57,14 +54,11 @@ def exit():
     del(grass)
     pass
 
-
 def pause():
     pass
 
-
 def resume():
     pass
-
 
 def handle_events():
     events = get_events()
@@ -76,11 +70,9 @@ def handle_events():
 
     pass
 
-
 def update():
     boy.update()
     pass
-
 
 def draw():
     clear_canvas()
@@ -88,8 +80,3 @@ def draw():
     boy.draw()
     update_canvas()
     pass
-
-
-
-
-

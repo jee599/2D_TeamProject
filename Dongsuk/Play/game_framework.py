@@ -8,8 +8,6 @@ class GameState:
         self.update = state.update
         self.draw = state.draw
 
-
-
 class TestGameState:
 
     def __init__(self, name):
@@ -39,14 +37,11 @@ class TestGameState:
 running = None
 stack = None
 
-
 def change_state(state):
     global stack
     pop_state()
     stack.append(state)
     state.enter()
-
-
 
 def push_state(state):
     global stack
@@ -54,8 +49,6 @@ def push_state(state):
         stack[-1].pause()
     stack.append(state)
     state.enter()
-
-
 
 def pop_state():
     global stack
@@ -69,12 +62,9 @@ def pop_state():
     if (len(stack) > 0):
         stack[-1].resume()
 
-
-
 def quit():
     global running
     running = False
-
 
 def run(start_state):
     global running, stack
@@ -94,8 +84,6 @@ def run(start_state):
 def test_game_framework():
     start_state = TestGameState('StartState')
     run(start_state)
-
-
 
 if __name__ == '__main__':
     test_game_framework()

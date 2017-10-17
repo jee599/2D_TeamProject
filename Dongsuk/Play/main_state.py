@@ -28,16 +28,18 @@ class Object:
     def __init__(self):
         self.image = load_image('Resource/bat.png')
         self.frame = 0
-        self.x = 800
+        self.x = random.randint(0,100)
         self.speed = 5
-        self.y = random.randint(0,7) * 100
+        self.x + 700
+        self.y = random.randint(1,7)
+
     def update(self):
-        self.frame = (self.frame + 1)%8
+        self.frame = (self.frame + 1)%6
         self.x = self.x - self.speed
-        if self.x < x :
+        if self.x <  70:
             self.x = 800
     def draw(self):
-        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
+        self.image.clip_draw(self.frame * 100, 0, 90, 90, self.x, self.y*100)
 
 class Grass:
     def __init__(self):
@@ -92,19 +94,18 @@ class Boy:
         self.image.clip_draw((self.frame * 100), 0, 100, 100, self.x, self.y)
 
 def enter():
-    global boy, grass, back
+    global boy, grass, back, team
     boy = Boy()
     grass = Grass()
     back = Back()
-    object = Object()
+    team = [Object() for i in range(6)]
     pass
 
 def exit():
-    global boy, grass
+    global boy, grass, back
     del(boy)
     del(grass)
     del(back)
-    del(object)
     pass
 
 def pause():
@@ -128,7 +129,8 @@ def handle_events():
 def update():
     boy.update()
     grass.update()
-    object.update()
+    for Object in team:
+        Object.update()
     pass
 
 def draw():
@@ -136,7 +138,8 @@ def draw():
     back.draw()
     boy.draw()
     grass.draw()
-    object.draw()
+    for Object in team:
+        Object.draw()
     update_canvas()
     delay(0.09)
     pass

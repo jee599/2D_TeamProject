@@ -1,5 +1,7 @@
 import json
 import random
+import back
+
 from pico2d import*
 
 def handle_events(frame_time):
@@ -168,6 +170,7 @@ def main():
         for player in team:
             player.update(frame_time)
         clear_canvas()
+
         grass.draw()
 
         for player in team:

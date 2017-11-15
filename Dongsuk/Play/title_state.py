@@ -34,7 +34,7 @@ def draw():
     update_canvas()
     pass
 
-def update ( ):
+def update ():
     pass
 
 def pause():

@@ -14,12 +14,16 @@ def handle_events():
 class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
+        self.bgm = load_music('football.mp3')
+        self.bgm.set_volume(64)
+        self.bgm.repeat_play()
 
     def draw(self):
         self.image.draw(400, 30)
 
 class Boy:
     image = None
+    sound = None
 
     LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND = 0, 1, 2, 3
 
@@ -29,15 +33,21 @@ class Boy:
         self.run_frame = 0
         self.dir = 1
         self.state = self.RIGHT_RUN
+        if Boy.sound == None:
+            Boy.sound = load_music('pickup.wav')
+            Boy.sound.set_volume(32)
 
         if Boy.image == None:
             self.image = load_image('animation_sheet.png')
+    def turn(self):
+        self.sound_.play()
 
     def update(self):
         self.frame = (self.frame + 1) % 8
         self.handle_state[self.state](self)
 
     def handle_left_run(self):
+        self.turn()
         self.x -= 3
         self.run_frame += 1
         if self.x < 0:
@@ -52,6 +62,7 @@ class Boy:
             self.state = self.LEFT_RUN
             self.run_frame = 0
     def handle_right_run(self):
+        self.turn()
         self.x += 3
         self.run_frame +=1
         if self.x > 800:

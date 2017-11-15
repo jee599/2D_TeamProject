@@ -26,7 +26,7 @@ class Back:
 
 class Object:
     def __init__(self):
-        self.image = load_image('Resource/bat.png')
+        self.image = load_image('Resource/bat1.png')
         self.frame = 0
         self.x = random.randint(0,100)
         self.speed = 5
@@ -58,7 +58,7 @@ class Boy:
         self.frame = 0
         self.time = 0
         self.time2 = 0
-        self.image = load_image('Resource/animation_sheet.png')
+        self.image = load_image('Resource/animation_sheet1.png')
         self.dir = 1
         self.state = 0
         x = self.x

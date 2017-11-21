@@ -1,6 +1,5 @@
 import time
 
-
 class GameState:
     def __init__(self, state):
         self.enter = state.enter
@@ -10,8 +9,6 @@ class GameState:
         self.handle_events = state.handle_events
         self.update = state.update
         self.draw = state.draw
-
-
 
 class TestGameState:
 
@@ -51,16 +48,12 @@ def change_state(state):
     stack.append(state)
     state.enter()
 
-
-
 def push_state(state):
     global stack
     if (len(stack) > 0):
         stack[-1].pause()
     stack.append(state)
     state.enter()
-
-
 
 def pop_state():
     global stack

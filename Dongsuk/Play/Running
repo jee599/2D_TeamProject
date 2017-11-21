@@ -1,6 +1,16 @@
 import random
 from pico2d import*
 
+def collide(a,b):
+    left_a, bottom_a, right_a, top_a = a.get_bb()
+    left_b, bottom_b, right_b, top_b = b.get.bb()
+
+    if left_a > right_b: return False
+    if right_a < left_b : return False
+    if top_a < bottom_b : return False
+    if bottom_a > top_b : return False
+    return True
+
 def handle_events():
     global running
     global status
@@ -33,6 +43,8 @@ class Boy:
         if Boy.image == None:
             self.image = load_image('animation_sheet.png')
 
+    def get_box(self):
+        return self.x-20,self.y-20,self.x+20,self.y+20
     def update(self):
         self.frame = (self.frame + 1) % 8
         self.handle_state[self.state](self)
@@ -73,7 +85,9 @@ class Boy:
     }
     def draw(self):
         self.image.clip_draw(self.frame*100, self.state*100, 100, 100, self.x, self.y)
-
+    def draw_bb(self):
+         print("co")
+        draw_rectangle(*self.get_box())
 def main():
     open_canvas()
     boy = Boy()
@@ -88,6 +102,7 @@ def main():
         clear_canvas()
         grass.draw()
         boy.draw()
+        boy.draw_bb()
         update_canvas()
 
         delay(0.05)

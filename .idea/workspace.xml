@@ -2,9 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80992bdf-c55f-4f7c-9e8f-03b39a1a9df5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/KPU_GROUND.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/animation_sheet.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/ball21x21.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/ball41x41.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/jail1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/jail2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/89418022.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/ConsolaMalgun.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/background.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/ball.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/boy.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/game_framework.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/main_state.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/mygame.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Background/scroll_state.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dongsuk/Play/b.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dongsuk/Play/4.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dongsuk/Play/Back.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dongsuk/Play/Resource/Candles.Burning.in.the.Dark.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dongsuk/Play/Resource/Cell_block_B_interior.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dongsuk/Play/Resource/Darkest_Dungeon_Background_The_Necromancer.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dongsuk/Play/Resource/Darkest_Dungeon_Background_The_Warrens.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dongsuk/Play/Resource/Ori-Evil-Owl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dongsuk/Play/Resource/다운로드.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dongsuk/Play/background.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dongsuk/Back2.py" afterPath="$PROJECT_DIR$/Dongsuk/Back2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dongsuk/Play/Running" afterPath="$PROJECT_DIR$/Dongsuk/Play/Running" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dongsuk/Play/main_state.py" afterPath="$PROJECT_DIR$/Dongsuk/Play/main_state.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,101 +39,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Running" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Running">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pico2d.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pico2d/pico2d.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="315" column="0" lean-forward="false" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="4.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/4.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Back.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Back.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mygame.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/mygame.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main_state.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dongsuk/Play/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+            <state relative-caret-position="161">
+              <caret line="39" column="57" lean-forward="false" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scel.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/scel.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prison2.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/prison2.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="candle.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/candle.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jail1.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/jail1.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jail2.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/jail2.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="owl.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/owl.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Back2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dongsuk/Back2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+            <state relative-caret-position="138">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ori-Evil-Owl.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/Ori-Evil-Owl.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="running2" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dongsuk/running2">
+      <file leaf-file-name="b.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dongsuk/Play/b.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="111" column="29" lean-forward="true" selection-start-line="111" selection-start-column="29" selection-end-line="111" selection-end-column="29" />
+            <state relative-caret-position="525">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Running" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dongsuk/Running">
+      <file leaf-file-name="main_state.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dongsuk/Background/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="364">
+              <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,6 +180,9 @@
         <option value="$PROJECT_DIR$/Dongsuk/Scroll/button.py" />
         <option value="$PROJECT_DIR$/Dongsuk/Play/Running" />
         <option value="$PROJECT_DIR$/Dongsuk/Back2.py" />
+        <option value="$PROJECT_DIR$/Dongsuk/Background/background.py" />
+        <option value="$PROJECT_DIR$/Dongsuk/Background/main_state.py" />
+        <option value="$PROJECT_DIR$/Dongsuk/Play/b.py" />
         <option value="$PROJECT_DIR$/Dongsuk/Play/main_state.py" />
       </list>
     </option>
@@ -218,6 +229,12 @@
               <item name="2D_TeamProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="2D_TeamProject" type="462c0819:PsiDirectoryNode" />
               <item name="Dongsuk" type="462c0819:PsiDirectoryNode" />
+              <item name="Background" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2D_TeamProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2D_TeamProject" type="462c0819:PsiDirectoryNode" />
+              <item name="Dongsuk" type="462c0819:PsiDirectoryNode" />
               <item name="Play" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -231,12 +248,6 @@
               <item name="2D_TeamProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="2D_TeamProject" type="462c0819:PsiDirectoryNode" />
               <item name="homework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2D_TeamProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2D_TeamProject" type="462c0819:PsiDirectoryNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="jee599" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -258,11 +269,11 @@
       <recent name="C:\Users\jidong\Documents\GitHub\2D_TeamProject\Dongsuk\Resource" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jidong\Documents\GitHub\2D_TeamProject\Dongsuk\Background" />
       <recent name="C:\Users\jidong\Documents\GitHub\2D_TeamProject\Dongsuk\Scroll" />
       <recent name="C:\Users\jidong\Documents\GitHub\2D_TeamProject\Dongsuk" />
       <recent name="C:\Users\jidong\Documents\GitHub\2D_TeamProject\homework\jee599" />
       <recent name="C:\Users\jidong\Documents\GitHub\2D_TeamProject\Dongsuk\Play" />
-      <recent name="C:\Users\jidong\Documents\GitHub\2D_TeamProject\Dongsuk\Play\Resource" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -277,42 +288,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Back2">
-    <configuration name="Back2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.mygame (1)">
+    <configuration name="game_framework" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dongsuk" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dongsuk/Background" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="2D_TeamProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dongsuk/Back2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dongsuk/Background/game_framework.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Running" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dongsuk/Play" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="2D_TeamProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dongsuk/Play/Running" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="main_state" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main_state (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -325,6 +319,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="2D_TeamProject" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dongsuk/Play/main_state.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="main_state" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dongsuk/Background" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="2D_TeamProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dongsuk/Background/main_state.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -346,37 +357,37 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="running2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="mygame" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/homework/jee599" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dongsuk/Background" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="2D_TeamProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/homework/jee599/running2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dongsuk/Background/mygame.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Running" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main_state" />
-      <item index="2" class="java.lang.String" itemvalue="Python.mygame (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.running2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Back2" />
+      <item index="0" class="java.lang.String" itemvalue="Python.mygame" />
+      <item index="1" class="java.lang.String" itemvalue="Python.game_framework" />
+      <item index="2" class="java.lang.String" itemvalue="Python.main_state" />
+      <item index="3" class="java.lang.String" itemvalue="Python.main_state (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.mygame (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Back2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.mygame (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main_state" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Running" />
-        <item index="4" class="java.lang.String" itemvalue="Python.running2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.mygame (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main_state (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.mygame" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main_state" />
+        <item index="4" class="java.lang.String" itemvalue="Python.game_framework" />
       </list>
     </recent_temporary>
   </component>
@@ -427,79 +438,125 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/running2" />
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/grass1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/grass2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/grass.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/animation_sheet.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/Prison.jpg" />
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/title.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pico2d.py" />
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/bat.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homework/turtle.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pico2d/pico2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="525">
+          <caret line="315" column="0" lean-forward="false" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/simple_module.py">
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Running">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="230">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/show_files.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/urban-lights.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/team_data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/Ori-Evil-Owl.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homework/jee599/team_data.txt">
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/Darkest_Dungeon_Background_The_Necromancer.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/Darkest_Dungeon_Background_The_Warrens.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/Candles.Burning.in.the.Dark.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/Cell_block_B_interior.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/boy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homework/jee599/running2___jb_tmp___" />
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/ConsolaMalgun.ttf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/89418022.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/ball.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/scroll_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/mygame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Back.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Running">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dongsuk/Play/start_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
+        <state relative-caret-position="553">
           <caret line="40" column="4" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -507,163 +564,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homework/jee599/run_animation.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homework/jee599/background.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/game_framework.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2024">
-          <caret line="88" column="25" lean-forward="false" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dongsuk/Play/background.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homework/jee599/back.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/._scroll_state.py" />
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/._mygame.py" />
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/ball.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Boy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/boy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="40" column="15" lean-forward="false" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/89418022.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/animation_sheet.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/background.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/KPU_GROUND.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/tile_bg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/game_framework.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="46" column="15" lean-forward="true" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/ConsolaMalgun.ttf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/mygame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/scroll_state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Scroll/button.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homework/jee599/running2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homework/jee599/show_files.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="525">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -676,20 +584,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Back.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pico2d/pico2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="315" column="0" lean-forward="false" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/animation_sheet.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dongsuk/Play/mygame.py">
@@ -700,7 +597,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Running">
+    <entry file="file://$PROJECT_DIR$/Dongsuk/running2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/KimDongSoon/tmw_desert_spacing.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/KimDongSoon/show_files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/KimDongSoon/simple_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/KimDongSoon/start_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/KimDongSoon/game_framework.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/KimDongSoon/background.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dongsoon/boss.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dongsoon/bat.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dongsoon/game_framework.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dongsoon/mygame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/KimDongSoon/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -710,44 +687,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/running2">
+    <entry file="file://$PROJECT_DIR$/homework/jee599/running2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="111" column="29" lean-forward="true" selection-start-line="111" selection-start-column="29" selection-end-line="111" selection-end-column="29" />
+        <state relative-caret-position="23">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Running">
+    <entry file="file://$PROJECT_DIR$/Dongsuk/simple_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/urban-lights.jpg">
+    <entry file="file://$PROJECT_DIR$/Dongsuk/show_files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/KPU_GROUND.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/jail2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/game_framework.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/background.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Background/main_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/b.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/scel.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/prison2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/candle.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/jail1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/jail2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/owl.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dongsuk/Back2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        <state relative-caret-position="138">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dongsuk/Play/Resource/Ori-Evil-Owl.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dongsuk/Play/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+        <state relative-caret-position="161">
+          <caret line="39" column="57" lean-forward="false" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
           <folding />
         </state>
       </provider>

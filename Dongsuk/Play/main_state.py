@@ -32,6 +32,30 @@ class Back:
         self.frame = (self.frame + 1)
         self.left = (self.left + self.frame * self.speed) % self.image.w
 
+class Background:
+    SCROLL_SPEED_PPS = 200
+    image = None
+    def __init__(self):
+        if Background.image == None:
+            Background.image = load_image('Resource/jail1.jpg')
+        self.x = 480
+        self.frame = 1
+        self.left = 0
+        self.speed = 1
+        self.screen_width = 800
+        self.screen_height = 600
+        pass
+
+    def draw(self):
+        x = int(self.left)
+        w = min(Background.image.w - x, self.screen_width)
+        Background.image.clip_draw_to_origin(x, 0, w, self.screen_height, 0, 0)
+        Background.image.clip_draw_to_origin(0, 0, self.screen_width - w, self.screen_height, w, 0)
+
+    def update(self):
+        self.frame = 1
+        self.left = (self.left + self.frame * self.speed) % self.image.w
+
 class Object:
     def __init__(self):
         self.image = load_image('Resource/bat1.png')
@@ -123,7 +147,7 @@ def enter():
     global boy, grass, back, team
     boy = Boy()
     grass = Grass()
-    back = Back()
+    back = Background()
     team = [Object() for i in range(6)]
     pass
 

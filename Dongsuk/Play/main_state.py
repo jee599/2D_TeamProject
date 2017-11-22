@@ -32,6 +32,29 @@ class Back:
         self.frame = (self.frame + 1)
         self.left = (self.left + self.frame * self.speed) % self.image.w
 
+class Background2:
+    SCROLL_SPEED_PPS = 200
+    image = None
+    def __init__(self):
+        if Background2.image == None:
+            Background2.image = load_image('Resource/candle.jpg')
+        self.x = 480
+        self.frame = 1
+        self.left = 0
+        self.speed = 5
+        self.screen_width = 800
+        self.screen_height = 200
+        pass
+
+    def draw(self):
+        x = int(self.left)
+        w = min(Background2.image.w - x, self.screen_width)
+        Background2.image.clip_draw_to_origin(x, 0, w, self.screen_height, 0, 0)
+        Background2.image.clip_draw_to_origin(0, 0, self.screen_width - w, self.screen_height, w, 0)
+
+    def update(self):
+        self.left = (self.left + self.frame * self.speed) % self.image.w
+
 class Background:
     SCROLL_SPEED_PPS = 200
     image = None
@@ -60,41 +83,90 @@ class Object:
     def __init__(self):
         self.image = load_image('Resource/bat1.png')
         self.frame = 0
-        self.x = random.randint(0,100)
-        self.speed = 5
-        self.x + 700
-        self.y = random.randint(1,7)
+        self.x = random.randint(600,800)
+        self.speed = random.randint(3,15)
+        self.y = random.randint(50,500)
+
+    def get_box(self):
+        return self.x - 20, self.y - 20, self.x + 20, self.y + 20
+
+    def draw_bb(self):
+        draw_rectangle(*self.get_box())
+
+    def new(self):
+        self.x = 800
+        self.speed = random.randint(3, 15)
+        self.y = random.randint(50, 500)
+
+    def update(self):
+        self.frame = (self.frame + 1) % 6
+        self.x = self.x - self.speed
+
+        if self.x <  20:
+            self.x = 800
+            self.speed = random.randint(3,15)
+            self.y = random.randint(50,500)
+    def draw(self):
+        self.image.clip_draw(self.frame * 100, 0, 90, 90, self.x, self.y)
+class Object2:
+    def __init__(self):
+        self.image = load_image('Resource/bat1.png')
+        self.frame = 0
+        self.x = random.randint(600,800)
+        self.speed = random.randint(3,15)
+        self.y = random.randint(50,500)
+
+    def get_box(self):
+        return self.x - 20, self.y - 20, self.x + 20, self.y + 20
+
+    def draw_bb(self):
+        draw_rectangle(*self.get_box())
 
     def update(self):
         self.frame = (self.frame + 1)%6
         self.x = self.x - self.speed
-        if self.x <  70:
+        if self.x <  50:
             self.x = 800
+            self.speed = random.randint(3,15)
+            self.y = random.randint(50,500)
     def draw(self):
-        self.image.clip_draw(self.frame * 100, 0, 90, 90, self.x, self.y*100)
+        self.image.clip_draw(self.frame * 100, 0, 90, 90, self.x, self.y)
 
 class Grass:
+    SCROLL_SPEED_PPS = 200
+    image = None
     def __init__(self):
-        self.image = load_image('Resource/grass2.png')
-        self.frame = 0
-    def update(self):
-        self.frame = (self.frame + 1)%8
-    def draw(self):
-        self.image.clip_draw(self.frame *100, 0, 800, 70 ,400, 30)
+        if Grass.image == None:
+            Grass.image = load_image('Resource/tile2.png')
+        self.x = 200
+        self.frame = 1
+        self.left = 0
+        self.speed = 13
+        self.screen_width = 800
+        self.screen_height = 75
+        pass
 
+    def draw(self):
+        x = int(self.left)
+        w = min(Grass.image.w - x, self.screen_width)
+        Grass.image.clip_draw_to_origin(x, 0, w, self.screen_height, 0, 0)
+        Grass.image.clip_draw_to_origin(0, 0, self.screen_width - w, self.screen_height, w, 0)
+
+    def update(self):
+        self.frame = 1
+        self.left = (self.left + self.frame * self.speed) % self.image.w
 
 def collide(a,b):
-    left_a, bottom_a, right_a, top_a = a.get_bb()
-    left_b, bottom_b, right_b, top_b = b.get.bb()
+    left_a, bottom_a, right_a, top_a = a.get_box()
+    left_b, bottom_b, right_b, top_b = b.get_box()
 
-    if left_a > right_b: return False
+    if left_a > right_b : return False
     if right_a < left_b : return False
     if top_a < bottom_b : return False
     if bottom_a > top_b : return False
     return True
 
 class Boy:
-
     global x
     def __init__(self):
         self.x, self.y = 70, 95
@@ -113,7 +185,6 @@ class Boy:
         draw_rectangle(*self.get_box())
 
     def handle_event(self, event):
-
         if (event.type, event.key) == (SDL_KEYDOWN, SDLK_UP):
             if self.state == 0:
                 self.state = 1
@@ -144,18 +215,20 @@ class Boy:
         self.image.clip_draw((self.frame * 100), 0, 100, 100, self.x, self.y)
 
 def enter():
-    global boy, grass, back, team
+    global boy, grass, back, team, back1
     boy = Boy()
     grass = Grass()
     back = Background()
+    back1 = Background2()
     team = [Object() for i in range(6)]
     pass
 
 def exit():
-    global boy, grass, back
+    global boy, grass, back, back1
     del(boy)
     del(grass)
     del(back)
+    del(back1)
     pass
 
 def pause():
@@ -179,6 +252,7 @@ def handle_events():
 def update():
     boy.update()
     back.update()
+    back1.update()
     grass.update()
     for Object in team:
         Object.update()
@@ -187,11 +261,16 @@ def update():
 def draw():
     clear_canvas()
     back.draw()
+    #back1.draw()
+    grass.draw()
     boy.draw()
     boy.draw_bb()
-    grass.draw()
     for Object in team:
-        Object.draw()
+        if collide(boy,Object) == False:
+            Object.draw()
+            Object.draw_bb()
+        else :
+            Object.new()
     update_canvas()
     delay(0.09)
     pass

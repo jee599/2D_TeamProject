@@ -37,13 +37,13 @@ class Background2:
     image = None
     def __init__(self):
         if Background2.image == None:
-            Background2.image = load_image('Resource/candle.jpg')
-        self.x = 480
+            Background2.image = load_image('Resource/skull6.png')
+        self.x = 500
         self.frame = 1
         self.left = 0
-        self.speed = 5
+        self.speed = 3
         self.screen_width = 800
-        self.screen_height = 200
+        self.screen_height = 600
         pass
 
     def draw(self):
@@ -173,6 +173,7 @@ class Boy:
         self.frame = 0
         self.time = 0
         self.time2 = 0
+        self.time3 = 0
         self.image = load_image('Resource/animation_sheet1.png')
         self.dir = 1
         self.state = 0
@@ -192,25 +193,34 @@ class Boy:
             elif self.state == 1:
                 self.state = 2
                 self.time2 = 0
-
+            elif self.state == 2:
+                self.state = 3
+                self.time3 = 0
     def update(self):
         self.frame = (self.frame + 1) % 8
         self.time = self.time + 1
         self.time2 = self.time2 + 1
+        self.time3 = self.time3 + 1
         if self.y < 95:
             self.y = 95
             self.state = 0
 
         if self.state == 1:
-            self.y = self.y + 20 - 9.8*self.time/5
+            self.y = self.y + 20 - 9.8*self.time/3
             if self.y < 95:
                 self.y = 95
                 self.state = 0
         if self.state == 2:
-            self.y = self.y + 20 - 9.8*self.time2/3
+            self.y = self.y + 25 - 9.8*self.time2/2
             if self.y < 95 :
                self.y = 95
                self.state = 0
+
+        if self.state == 3:
+               self.y = self.y + 20 - 9.8 * self.time3/2
+               if self.y < 95:
+                   self.y = 95
+                   self.state = 0
     def draw(self):
         self.image.clip_draw((self.frame * 100), 0, 100, 100, self.x, self.y)
 
@@ -261,7 +271,7 @@ def update():
 def draw():
     clear_canvas()
     back.draw()
-    #back1.draw()
+    back1.draw()
     grass.draw()
     boy.draw()
     boy.draw_bb()

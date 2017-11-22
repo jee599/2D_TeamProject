@@ -20,9 +20,17 @@ def handle_events():
 
 class Back:
     def __init__(self):
+        self.frame = 0
         self.image = load_image('Resource/Prison.png')
     def draw(self):
-        self.image.draw(400,300)
+        x = int(self.left)
+        w = min(self.iamge.w - x, self.screen_width)
+        self.image.clip_draw_to_origin(x,0,w,self.screen_height,0,0)
+        self.image.clip_draw_to_origin(0,0,self.screen_width-w,self.screen_height,w,0)
+
+    def update(self):
+        self.frame = (self.frame + 1)
+        self.left = (self.left + self.frame * self.speed) % self.image.w
 
 class Object:
     def __init__(self):
@@ -50,6 +58,17 @@ class Grass:
     def draw(self):
         self.image.clip_draw(self.frame *100, 0, 800, 70 ,400, 30)
 
+
+def collide(a,b):
+    left_a, bottom_a, right_a, top_a = a.get_bb()
+    left_b, bottom_b, right_b, top_b = b.get.bb()
+
+    if left_a > right_b: return False
+    if right_a < left_b : return False
+    if top_a < bottom_b : return False
+    if bottom_a > top_b : return False
+    return True
+
 class Boy:
 
     global x
@@ -62,6 +81,13 @@ class Boy:
         self.dir = 1
         self.state = 0
         x = self.x
+
+    def get_box(self):
+        return self.x - 20, self.y - 45, self.x + 40, self.y + 35
+
+    def draw_bb(self):
+        draw_rectangle(*self.get_box())
+
     def handle_event(self, event):
 
         if (event.type, event.key) == (SDL_KEYDOWN, SDLK_UP):
@@ -128,6 +154,7 @@ def handle_events():
 
 def update():
     boy.update()
+    back.update()
     grass.update()
     for Object in team:
         Object.update()
@@ -137,6 +164,7 @@ def draw():
     clear_canvas()
     back.draw()
     boy.draw()
+    boy.draw_bb()
     grass.draw()
     for Object in team:
         Object.draw()

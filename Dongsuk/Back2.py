@@ -1,4 +1,4 @@
-import pico2d from*
+from pico2d import*
 
 def create_world():
     global boy, background

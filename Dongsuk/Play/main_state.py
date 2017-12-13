@@ -38,7 +38,7 @@ class Background2:
     image = None
     def __init__(self):
         if Background2.image == None:
-            Background2.image = load_image('Resource/skull6.png')
+            Background2.image = load_image('Resource/skull7.png')
         self.x = 500
         self.frame = 1
         self.left = 0

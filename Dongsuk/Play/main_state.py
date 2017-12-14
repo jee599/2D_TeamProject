@@ -16,6 +16,7 @@ speed = 20
 bgm = None
 score = 0
 stage = 0
+Box = 0
 font = None
 
 def handle_events():
@@ -25,12 +26,12 @@ def handle_events():
 class Life:
     def __init__(self):
         self.image = load_image('Resource/nomlife.png')
-        self.switch = 3
+        self.switch = 5
     def draw(self):
         global stage
         if(stage == 0):
             for i in range(self.switch):
-                self.image.clip_draw(0, stage*50, 50, 50, 350 +i * 50, 520)
+                self.image.clip_draw(0, stage*50, 50, 50, 300 +i * 50, 520)
         elif(stage == 1):
             for i in range(self.switch):
                 self.image.clip_draw(0, stage*50, 50, 50, 80, 250 +i*50)
@@ -51,8 +52,20 @@ class Background:
         if Background.image == None:
             Background.image = load_image('Resource/back2.png')
         self.frame = 0
+        self.timer = 0
+        self.limit = 10
     def update(self):
-        self.frame = (self.frame + 1)%4
+        self.timer += 1
+        if self.timer > self.limit*4:
+            self.timer = 0
+        if self.timer < self.limit:
+            self.frame = 0
+        elif self.timer < self.limit*2:
+            self.frame = 1
+        elif self.timer < self.limit*3:
+            self.frame = 2
+        else:
+            self.frame = 3
     def draw(self):
         self.image.clip_draw((self.frame*800), 0, 800,600, 400, 300)
 class Background2:
@@ -254,21 +267,30 @@ def resume():
     pass
 
 def handle_events():
+    global Box
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
             game_framework.quit()
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.chage_state(title_state)
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_TAB:
+            if Box == 0:
+                Box = 1
+            else:
+                Box = 0
         else:
             boy.handle_event(event)
 
     pass
 
 def update():
-    global score, font, bgm
+    global score, font, bgm, Box
 
-    score += 1
+    if Box == 1:
+        score += 1
+    else :
+        score += 2
     boy.update()
     back.update()
     #back1.update()
@@ -277,7 +299,7 @@ def update():
     pass
 
 def draw():
-    global score,font,bgm, lsife
+    global score,font,bgm,ife,Box
 
     clear_canvas()
     back.draw()
@@ -285,20 +307,26 @@ def draw():
     wall.draw()
     life.draw()
     boy.draw()
-    boy.draw_bb()
+    if Box == 1:
+        boy.draw_bb()
 
     if font == None:
         font = load_font('Resource\ENCR10B.TTF')
-
-    font.draw(350,350, 'score : %d' % score)
+    if(Box == 1):
+        font.draw(350,450 ,'Easy')
+    else:
+        font.draw(350,450, 'Hard')
+    font.draw(350,375,'Stage : %d' % stage)
+    font.draw(350,350, 'Score : %d' % score)
     for Object in team:
         if collide(boy,Object) == False:
             Object.draw()
-            Object.draw_bb()
+            if(Box == 1):
+                Object.draw_bb()
         else :
             if life.switch != 0:
                 life.switch -= 1
             Object.new()
     update_canvas()
-    delay(0.03)
+    delay(0.03 + Box*0.03)
     pass

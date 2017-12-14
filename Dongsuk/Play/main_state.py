@@ -2,22 +2,49 @@
 import random
 import json
 import os
-import Resource
+
+os.chdir('Resource')
 
 from pico2d import *
 
 import game_framework
 import title_state
 
-name = "MainState"
+name = "Main State"
 
+life = None
 boy = None
 grass = None
 font = None
+speed = 20
+bgm = None
+score = None
+stage = 0
 
 def handle_events():
     global running
     events = get_events()
+
+class Life:
+    def __init__(self):
+
+        self.image = load_image('Resource/nomlife.png')
+        self.switch = 3
+    def draw(self):
+        global stage
+        if(stage == 0):
+            for i in range(self.switch):
+                self.image.clip_draw(0, stage*50, 50, 50, 350 +i * 50, 520)
+        elif(stage == 1)
+            for i in range(self.switch):
+                self.image.clip_draw(0, stage*50, 50, 50, 80, 250 +i*50)
+        elif(stage == 2)
+            for i in range(self.switch):
+                self.image.clip_draw(0, stage * 50, 50, 50, 450 - i * 50, 80)
+        elif (stage == 3):
+            for i in range(self.switch):
+                self.image.clip_draw(0, stage * 50, 50, 50, 720, 350 - i * 50)
+    pass
 
 class Back:
     def __init__(self):
@@ -57,6 +84,13 @@ class Background2:
         self.left = (self.left + self.frame * self.speed) % self.image.w
 
 class Background:
+    def __init__(self):
+        self.image = load_image('Resource/back.png')
+
+    def draw(self):
+        self.image.draw(400,300)
+        
+class Background:
     SCROLL_SPEED_PPS = 200
     image = None
     def __init__(self):
@@ -85,7 +119,7 @@ class Object:
         self.image = load_image('Resource/bat1.png')
         self.frame = 0
         self.x = random.randint(600,800)
-        self.speed = random.randint(3,15)
+        self.speed = random.randint(7,20)
         self.y = random.randint(50,500)
 
     def get_box(self):
@@ -114,7 +148,7 @@ class Object2:
         self.image = load_image('Resource/bat1.png')
         self.frame = 0
         self.x = random.randint(600,800)
-        self.speed = random.randint(3,15)
+        self.speed = random.randint(7,17)
         self.y = random.randint(50,500)
 
     def get_box(self):
@@ -142,7 +176,7 @@ class Grass:
         self.x = 200
         self.frame = 1
         self.left = 0
-        self.speed = 13
+        self.speed = 20
         self.screen_width = 800
         self.screen_height = 75
         pass
@@ -175,6 +209,7 @@ class Boy:
         self.time = 0
         self.time2 = 0
         self.time3 = 0
+        #self.image1 = load_image('Resource/animation_sheet2.png)
         self.image = load_image('Resource/animation_sheet1.png')
         self.dir = 1
         self.state = 0
@@ -207,7 +242,7 @@ class Boy:
             self.state = 0
 
         if self.state == 1:
-            self.y = self.y + 20 - 9.8*self.time/3
+            self.y = self.y + 25 - 9.8*self.time/2
             if self.y < 95:
                 self.y = 95
                 self.state = 0
@@ -216,14 +251,14 @@ class Boy:
             if self.y < 95 :
                self.y = 95
                self.state = 0
-
         if self.state == 3:
-               self.y = self.y + 20 - 9.8 * self.time3/2
+               self.y = self.y + 25 - 9.8 * self.time3/2
                if self.y < 95:
                    self.y = 95
                    self.state = 0
     def draw(self):
-        self.image.clip_draw((self.frame * 100), 0, 100, 100, self.x, self.y)
+        if self.state != 4:
+            self.image.clip_draw((self.frame * 100), 0, 100, 100, self.x, self.y)
 
 def enter():
     global boy, grass, back, team, back1
@@ -283,5 +318,5 @@ def draw():
         else :
             Object.new()
     update_canvas()
-    delay(0.09)
+    delay(0.03)
     pass

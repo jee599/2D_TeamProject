@@ -2,9 +2,6 @@
 import random
 import json
 import os
-
-os.chdir('Resource')
-
 from pico2d import *
 
 import game_framework
@@ -14,7 +11,6 @@ name = "Main State"
 
 life = None
 boy = None
-grass = None
 font = None
 speed = 20
 bgm = None
@@ -27,7 +23,6 @@ def handle_events():
 
 class Life:
     def __init__(self):
-
         self.image = load_image('Resource/nomlife.png')
         self.switch = 3
     def draw(self):
@@ -35,10 +30,10 @@ class Life:
         if(stage == 0):
             for i in range(self.switch):
                 self.image.clip_draw(0, stage*50, 50, 50, 350 +i * 50, 520)
-        elif(stage == 1)
+        elif(stage == 1):
             for i in range(self.switch):
                 self.image.clip_draw(0, stage*50, 50, 50, 80, 250 +i*50)
-        elif(stage == 2)
+        elif(stage == 2):
             for i in range(self.switch):
                 self.image.clip_draw(0, stage * 50, 50, 50, 450 - i * 50, 80)
         elif (stage == 3):
@@ -46,18 +41,24 @@ class Life:
                 self.image.clip_draw(0, stage * 50, 50, 50, 720, 350 - i * 50)
     pass
 
-class Back:
+class Background:
+    image = None
     def __init__(self):
-        self.frame = 0
-        self.image = load_image('Resource/Prison.png')
+        if Background.image == None:
+            Background.image = load_image('Resource/jail1.jpg')
+        self.x = 500
+        self.frame = 1
+        self.left = 0
+        self.speed = 0.3
+        self.screen_width = 800
+        self.screen_height = 600
     def draw(self):
         x = int(self.left)
-        w = min(self.iamge.w - x, self.screen_width)
-        self.image.clip_draw_to_origin(x,0,w,self.screen_height,0,0)
-        self.image.clip_draw_to_origin(0,0,self.screen_width-w,self.screen_height,w,0)
+        w = min(Background.image.w - x, self.screen_width)
+        Background.image.clip_draw_to_origin(x, 0, w, self.screen_height, 0, 0)
+        Background.image.clip_draw_to_origin(0, 0, self.screen_width - w, self.screen_height, w, 0)
 
     def update(self):
-        self.frame = (self.frame + 1)
         self.left = (self.left + self.frame * self.speed) % self.image.w
 
 class Background2:
@@ -83,36 +84,12 @@ class Background2:
     def update(self):
         self.left = (self.left + self.frame * self.speed) % self.image.w
 
-class Background:
+class Wall:
     def __init__(self):
         self.image = load_image('Resource/back.png')
 
     def draw(self):
         self.image.draw(400,300)
-        
-class Background:
-    SCROLL_SPEED_PPS = 200
-    image = None
-    def __init__(self):
-        if Background.image == None:
-            Background.image = load_image('Resource/jail1.jpg')
-        self.x = 480
-        self.frame = 1
-        self.left = 0
-        self.speed = 1
-        self.screen_width = 800
-        self.screen_height = 600
-        pass
-
-    def draw(self):
-        x = int(self.left)
-        w = min(Background.image.w - x, self.screen_width)
-        Background.image.clip_draw_to_origin(x, 0, w, self.screen_height, 0, 0)
-        Background.image.clip_draw_to_origin(0, 0, self.screen_width - w, self.screen_height, w, 0)
-
-    def update(self):
-        self.frame = 1
-        self.left = (self.left + self.frame * self.speed) % self.image.w
 
 class Object:
     def __init__(self):
@@ -261,18 +238,18 @@ class Boy:
             self.image.clip_draw((self.frame * 100), 0, 100, 100, self.x, self.y)
 
 def enter():
-    global boy, grass, back, team, back1
+    global boy, wall, back, team, back1
     boy = Boy()
-    grass = Grass()
+    wall = Wall()
     back = Background()
     back1 = Background2()
     team = [Object() for i in range(6)]
     pass
 
 def exit():
-    global boy, grass, back, back1
+    global boy, wall, back, back1
     del(boy)
-    del(grass)
+    del(wall)
     del(back)
     del(back1)
     pass
@@ -299,7 +276,6 @@ def update():
     boy.update()
     back.update()
     back1.update()
-    grass.update()
     for Object in team:
         Object.update()
     pass
@@ -308,7 +284,7 @@ def draw():
     clear_canvas()
     back.draw()
     back1.draw()
-    grass.draw()
+    wall.draw()
     boy.draw()
     boy.draw_bb()
     for Object in team:

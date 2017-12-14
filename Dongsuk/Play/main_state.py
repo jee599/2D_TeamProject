@@ -139,6 +139,7 @@ class Boy:
         self.time2 = 0
         self.image = load_image('Resource/animation_sheet0.png')
         self.dir = 1
+        self.save = 0
         self.state = 0
         self.jumpstate = 0
         x = self.x
@@ -161,46 +162,51 @@ class Boy:
     def update(self):
         global stage, score, run
         self.frame = (self.frame + 1) % 8
-        if score > 100 and self.state == 0:
-            run = 1
-            self.x += speed
-            if self.x >= 700:
-                self.jumpstate = 0
-                stage += 1
-                run = 0
-                self.x = 735
-                self.y = 70
-                self.state = 1
-        if score > 250 and self.state == 1:
-            run = 1
-            self.y += speed
-            if self.y >= 500:
-                self.jumpstate = 0
-                self.y = 535
-                self.x = 735
-                run = 0
-                stage += 1
-                self.state = 2
-        if score > 350 and self.state == 2:
-            run =1
-            self.x -= speed
-            if self.x <= 100:
-                self.jumpstate = 0
-                self.x = 70
-                self.y = 535
-                run = 0
-                stage += 1
-                self.state = 3
-        if score > 500 and self.state == 3:
-            run =1
-            self.y -= speed
-            if self.y <= 100:
-                self.jumpstate = 0
-                self.y = 75
-                self.x = 70
-                run = 0
-                stage += 1
-                self.state = 0
+        if score > 100 + self.save:
+            if self.state == 0:
+                run = 1
+                self.x += speed
+                if self.x >= 700:
+                    self.jumpstate = 0
+                    stage += 1
+                    run = 0
+                    self.x = 735
+                    self.y = 70
+                    self.state = 1
+                    self.save = score
+            elif self.state == 1:
+                run = 1
+                self.y += speed
+                if self.y >= 500:
+                    self.jumpstate = 0
+                    self.y = 535
+                    self.x = 735
+                    run = 0
+                    stage += 1
+                    self.state = 2
+                    self.save = score
+            elif self.state == 2:
+                run =1
+                self.x -= speed
+                if self.x <= 100:
+                    self.jumpstate = 0
+                    self.x = 70
+                    self.y = 535
+                    run = 0
+                    stage += 1
+                    self.state = 3
+                    self.save = score
+            elif self.state == 3:
+                run =1
+                self.y -= speed
+                if self.y <= 100:
+                    self.jumpstate = 0
+                    self.y = 75
+                    self.x = 70
+                    self.save = score
+                    run = 0
+                    stage += 1
+                    self.state = 0
         self.jump()
     def jump(self):
         self.time = self.time + 1
@@ -248,7 +254,19 @@ class Boy:
                     self.y = 535
                     self.jumpstate = 0
         if self.state == 3:
-            
+            if self.x < 70:
+                self.x = 70
+                self.jumpstate = 0
+            if self.jumpstate == 1:
+                self.x = self.x - 35 + 9*self.time/2
+                if self.x < 70:
+                    self.x = 70
+                    self.jumpstate = 0
+            if self.jumpstate == 2:
+                self.x = self.x - 35 + 9* self.time2/2
+                if self.x < 70:
+                    self.x = 70
+                    self.jumpstate = 0
     def draw(self):
         if self.state != 4:
             self.image.clip_draw((self.frame * 100), (self.state* 100), 100, 100, self.x, self.y)

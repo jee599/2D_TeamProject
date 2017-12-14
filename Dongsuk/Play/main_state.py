@@ -361,8 +361,8 @@ def enter():
     life = Life()
     wall = Wall()
     back = Background()
-    team1 = [Object2() for i in range(2)]
-    team = [Object() for i in range(3)]
+    team1 = [Object2() for i in range(20)]
+    team = [Object() for i in range(20)]
     bgm = load_music('Nomplay.mp3')
     bgm.set_volume(64)
     bgm.repeat_play()
@@ -424,6 +424,8 @@ def update():
 def draw():
     global score,font,bgm,Box, run
 
+    i = 0
+
     clear_canvas()
     back.draw()
     wall.draw()
@@ -431,25 +433,30 @@ def draw():
     boy.draw()
 
     if run == 0:
+        i = 0
         for Object in team:
-            if collide(boy, Object) == False:
-                Object.draw()
-                if (Box == 1):
-                    Object.draw_bb()
-            else:
-                if life.switch != 0:
-                    life.switch -= 1
-                Object.new()
-
+            i += 1
+            if(i <= stage + 1):
+                if collide(boy, Object) == False:
+                    Object.draw()
+                    if (Box == 1):
+                        Object.draw_bb()
+                else:
+                    if life.switch != 0:
+                        life.switch -= 1
+                    Object.new()
+        i = 0
         for Object2 in team1:
-            if collide(boy,Object2) == False:
-                Object2.draw()
-                if Box == 1:
-                    Object2.draw_bb()
-            else:
-                if life.switch != 0:
-                    life.switch -= 1
-                Object2.new()
+            i += 1
+            if (i <= stage + 1):
+                if collide(boy,Object2) == False:
+                    Object2.draw()
+                    if Box == 1:
+                        Object2.draw_bb()
+                else:
+                    if life.switch != 0:
+                        life.switch -= 1
+                    Object2.new()
 
     if Box == 1:
         boy.draw_bb()

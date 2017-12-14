@@ -17,6 +17,7 @@ bgm = None
 score = 0
 stage = 0
 Box = 0
+run = 0
 font = None
 
 def handle_events():
@@ -26,7 +27,7 @@ def handle_events():
 class Life:
     def __init__(self):
         self.image = load_image('Resource/nomlife.png')
-        self.switch = 1
+        self.switch = 5
     def draw(self):
         global stage
         if(stage == 0):
@@ -48,7 +49,7 @@ class Background:
     image1 = None
     def __init__(self):
         if Background.image == None:
-            Background.image = load_image('Resource/back00.png')
+            Background.image = load_image('Resource/back0.png')
         if Background.image == None:
             Background.image1 = load_image('Resource/back2.png')
         self.frame = 0
@@ -68,8 +69,8 @@ class Object:
     def __init__(self):
         self.image = load_image('Resource/bat1.png')
         self.frame = 0
-        self.x = random.randint(600,800)
-        self.speed = random.randint(7,13)
+        self.x = random.randint(600,1200)
+        self.speed = random.randint(7,15)
         self.y = random.randint(100,200)
 
     def get_box(self):
@@ -79,8 +80,8 @@ class Object:
         draw_rectangle(*self.get_box())
 
     def new(self):
-        self.x += 800
-        self.speed = random.randint(7, 13)
+        self.x += random.randint(500, 1000)
+        self.speed = random.randint(7, 15)
         self.y = random.randint(100, 200)
 
     def update(self):
@@ -111,6 +112,8 @@ class Object2:
         self.x += random.randint(600,1000)
     def update(self):
         self.x = self.x - 7
+        if self.x < 20:
+            self.x = 800
     def draw(self):
         self.image.clip_draw(0, 0, 90, 90, self.x, self.y)
 
@@ -125,53 +128,97 @@ def collide(a,b):
     return True
 
 class Boy:
-    global x
+
+    global x, score, stage, run
+
     def __init__(self):
-        self.x, self.y = 100, 70
+        self.x, self.y = 70, 70
         self.frame = 0
         self.time = 0
+        self.speed = 10
         self.time2 = 0
-        self.image = load_image('Resource/animation_sheet1.png')
+        self.image = load_image('Resource/animation_sheet0.png')
         self.dir = 1
         self.state = 0
+        self.jumpstate = 0
         x = self.x
 
     def get_box(self):
-        return self.x - 20, self.y - 45, self.x + 40, self.y + 35
+        return self.x - 30, self.y - 30, self.x + 30, self.y + 30
 
     def draw_bb(self):
         draw_rectangle(*self.get_box())
 
     def handle_event(self, event):
         if (event.type, event.key) == (SDL_KEYDOWN, SDLK_UP):
-            if self.state == 0:
-                self.state = 1
+            if self.jumpstate == 0:
+                self.jumpstate = 1
                 self.time = 0
-            elif self.state == 1:
-                self.state = 2
+            elif self.jumpstate == 1:
+                self.jumpstate = 2
                 self.time2 = 0
+
     def update(self):
-        global stage, score
+        global stage, score, run
         self.frame = (self.frame + 1) % 8
+        self.jump()
+        if score > 100 and self.state == 0:
+            run = 1
+            self.x += speed
+            if self.x >= 700:
+                stage += 1
+                run = 0
+                self.x = 735
+                self.y = 70
+                self.state = 1
+        if score > 250 and self.state == 1:
+            run = 1
+            self.y += speed
+            if self.y >= 500:
+                self.y = 535
+                self.x = 735
+                run = 0
+                stage += 1
+                self.state = 2
+        if score > 350 and self.state == 2:
+            run =1
+            self.x -= speed
+            if self.x <= 100:
+                self.x = 70
+                self.y = 535
+                run = 0
+                stage += 1
+                self.state = 3
+        if score > 500 and self.state == 3:
+            run =1
+            self.y-=speed
+            if self.y <= 100:
+                self.y = 75
+                self.x = 70
+                run = 0
+                stage += 1
+                self.state = 0
+    def jump(self):
         self.time = self.time + 1
         self.time2 = self.time2 + 1
-        if self.y < 70:
-            self.y = 70
-            self.state = 0
-        if self.state == 1:
-            self.y = self.y + 35 - 9*self.time/2
+        if self.state == 0:
             if self.y < 70:
                 self.y = 70
                 self.state = 0
-        if self.state == 2:
-            self.y = self.y + 35 - 9*self.time2/2
-            if self.y < 70 :
-                self.y = 70
-                self.state = 0
+            if self.jumpstate == 1:
+                self.y = self.y + 35 - 9*self.time/2
+                if self.y < 70:
+                    self.y = 70
+                    self.jumpstate = 0
+            if self.jumpstate == 2:
+                self.y = self.y + 35 - 9*self.time2/2
+                if self.y < 70 :
+                    self.y = 70
+                    self.jumpstate = 0
+        
     def draw(self):
         if self.state != 4:
-            self.image.clip_draw((self.frame * 100), 0, 100, 100, self.x, self.y)
-
+            self.image.clip_draw((self.frame * 100), (self.state* 100), 100, 100, self.x, self.y)
 def enter():
     global boy, wall, back, team,life, bgm, font, team1
     boy = Boy()
@@ -240,22 +287,33 @@ def update():
     pass
 
 def draw():
-    global score,font,bgm,Box
+    global score,font,bgm,Box, run
 
     clear_canvas()
     back.draw()
     wall.draw()
     life.draw()
     boy.draw()
-    for Object2 in team1:
-        if collide(boy,Object2) == False:
-            Object2.draw()
-            if Box == 1:
-                Object2.draw_bb()
-        else:
-            if life.switch != 0:
-                life.switch -= 1
-            Object2.new()
+    if run == 0:
+        for Object in team:
+            if collide(boy, Object) == False:
+                Object.draw()
+                if (Box == 1):
+                    Object.draw_bb()
+            else:
+                if life.switch != 0:
+                    life.switch -= 1
+                Object.new()
+
+        for Object2 in team1:
+            if collide(boy,Object2) == False:
+                Object2.draw()
+                if Box == 1:
+                    Object2.draw_bb()
+            else:
+                if life.switch != 0:
+                    life.switch -= 1
+                Object2.new()
     if Box == 1:
         boy.draw_bb()
     if font == None:
@@ -268,15 +326,6 @@ def draw():
     font.draw(350,375,'Stage : %d' % (stage + 1))
     font.draw(350,350, 'Score : %d' % score)
 
-    for Object in team:
-        if collide(boy,Object) == False:
-            Object.draw()
-            if(Box == 1):
-                Object.draw_bb()
-        else :
-            if life.switch != 0:
-                life.switch -= 1
-            Object.new()
     update_canvas()
     delay(0.06 + Box*0.02)
     pass

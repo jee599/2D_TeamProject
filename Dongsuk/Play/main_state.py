@@ -16,6 +16,7 @@ speed = 20
 bgm = None
 score = None
 stage = 0
+font = None
 
 def handle_events():
     global running
@@ -181,11 +182,10 @@ def collide(a,b):
 class Boy:
     global x
     def __init__(self):
-        self.x, self.y = 70, 95
+        self.x, self.y = 100, 70
         self.frame = 0
         self.time = 0
         self.time2 = 0
-        self.time3 = 0
         #self.image1 = load_image('Resource/animation_sheet2.png)
         self.image = load_image('Resource/animation_sheet1.png')
         self.dir = 1
@@ -206,49 +206,50 @@ class Boy:
             elif self.state == 1:
                 self.state = 2
                 self.time2 = 0
-            elif self.state == 2:
-                self.state = 3
-                self.time3 = 0
     def update(self):
+        global stage, score
         self.frame = (self.frame + 1) % 8
         self.time = self.time + 1
         self.time2 = self.time2 + 1
         self.time3 = self.time3 + 1
-        if self.y < 95:
-            self.y = 95
+        if self.y < 70:
+            self.y = 70
             self.state = 0
-
         if self.state == 1:
-            self.y = self.y + 25 - 9.8*self.time/2
-            if self.y < 95:
-                self.y = 95
+            self.y = self.y + 30 - 9.8*self.time/2
+            if self.y < 70:
+                self.y = 70
                 self.state = 0
         if self.state == 2:
-            self.y = self.y + 25 - 9.8*self.time2/2
-            if self.y < 95 :
-               self.y = 95
-               self.state = 0
-        if self.state == 3:
-               self.y = self.y + 25 - 9.8 * self.time3/2
-               if self.y < 95:
-                   self.y = 95
-                   self.state = 0
+            self.y = self.y + 30 - 9.8*self.time2/2
+            if self.y < 70 :
+                self.y = 70
+                self.state = 0
     def draw(self):
         if self.state != 4:
             self.image.clip_draw((self.frame * 100), 0, 100, 100, self.x, self.y)
 
 def enter():
-    global boy, wall, back, team, back1
+    global boy, wall, back, team, back1, life, bgm, font
     boy = Boy()
+    life = Life()
     wall = Wall()
     back = Background()
     back1 = Background2()
+    font=load_font('ENCR10B.TTF')
+    bgm=load_music('nomplay.mp3')
+    bgm.set_volume(64)
+    bgm.repeat_play()
     team = [Object() for i in range(6)]
     pass
 
 def exit():
-    global boy, wall, back, back1
+    global boy, wall, back, back1, life, team,bgm,font
     del(boy)
+    del(bgm)
+    del(font)
+    del(team)
+    del(life)
     del(wall)
     del(back)
     del(back1)
@@ -273,6 +274,9 @@ def handle_events():
     pass
 
 def update():
+    global score
+    score+=1
+
     boy.update()
     back.update()
     back1.update()
@@ -281,12 +285,15 @@ def update():
     pass
 
 def draw():
+    global score
     clear_canvas()
     back.draw()
     back1.draw()
     wall.draw()
+    life.draw()
     boy.draw()
     boy.draw_bb()
+    font.draw(400,300, 'score : %d' % score)
     for Object in team:
         if collide(boy,Object) == False:
             Object.draw()

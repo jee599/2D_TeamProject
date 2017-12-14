@@ -14,7 +14,7 @@ boy = None
 font = None
 speed = 20
 bgm = None
-score = None
+score = 0
 stage = 0
 font = None
 
@@ -211,7 +211,6 @@ class Boy:
         self.frame = (self.frame + 1) % 8
         self.time = self.time + 1
         self.time2 = self.time2 + 1
-        self.time3 = self.time3 + 1
         if self.y < 70:
             self.y = 70
             self.state = 0
@@ -235,12 +234,12 @@ def enter():
     life = Life()
     wall = Wall()
     back = Background()
-    back1 = Background2()
-    font=load_font('ENCR10B.TTF')
-    bgm=load_music('nomplay.mp3')
+    #back1 = Background2()
+    team = [Object() for i in range(6)]
+
+    bgm=load_music('Nomplay.mp3')
     bgm.set_volume(64)
     bgm.repeat_play()
-    team = [Object() for i in range(6)]
     pass
 
 def exit():
@@ -274,26 +273,32 @@ def handle_events():
     pass
 
 def update():
-    global score
-    score+=1
+    global score, font, bgm
 
+    score += 1
     boy.update()
     back.update()
-    back1.update()
+    #back1.update()
     for Object in team:
         Object.update()
+
     pass
 
 def draw():
-    global score
+    global score,font,bgm
+
     clear_canvas()
     back.draw()
-    back1.draw()
+    #back1.draw()
     wall.draw()
     life.draw()
     boy.draw()
     boy.draw_bb()
-    font.draw(400,300, 'score : %d' % score)
+
+    if font == None:
+        font = load_font('Resource\ENCR10B.TTF')
+
+    font.draw(350,350, 'score : %d' % score)
     for Object in team:
         if collide(boy,Object) == False:
             Object.draw()

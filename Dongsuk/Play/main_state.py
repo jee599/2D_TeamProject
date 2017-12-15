@@ -137,7 +137,7 @@ class Object:
                 self.new()
     def draw(self):
         global stage
-        self.image.clip_draw(self.frame * 100, (stage%4) * 100, 100, 100, self.x, self.y)
+        self.image.clip_draw(self.frame * 100, (stage%4) * 100, 95, 95, self.x, self.y)
 class Object2:
     def __init__(self):
         self.image = load_image('Resource/horn00.png')

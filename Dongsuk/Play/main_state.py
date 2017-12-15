@@ -26,7 +26,7 @@ def handle_events():
 
 class Life:
     def __init__(self):
-        self.image = load_image('Resource/heart.png')
+        self.image = load_image('Resource/nomlife.png')
         self.switch = 5
     def draw(self):
         global stage
@@ -192,7 +192,7 @@ class Object2:
 
     def draw(self):
         global stage
-        self.image.clip_draw(0, 0, 90, 90, self.x, self.y)
+        self.image.clip_draw(0, (stage % 4) * 100, 100, 100, self.x, self.y)
 
 def collide(a,b):
     left_a, bottom_a, right_a, top_a = a.get_box()

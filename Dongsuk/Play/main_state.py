@@ -162,7 +162,7 @@ class Object2:
             self.x = random.randint(600, 1200)
             self.y = 70
         if stage % 4 == 1:
-            self.x = 830
+            self.x = 730
             self.y = random.randint(400, 1000)
         if stage % 4 == 2:
             self.y = 530
@@ -192,7 +192,7 @@ class Object2:
 
     def draw(self):
         global stage
-        self.image.clip_draw(0, (stage % 4) * 100, 100, 100, self.x, self.y)
+        self.image.clip_draw(0, (stage % 4) * 100, 90, 90, self.x, self.y)
 
 def collide(a,b):
     left_a, bottom_a, right_a, top_a = a.get_box()
@@ -354,7 +354,7 @@ class Boy:
                     self.jumpstate = 0
     def draw(self):
         if self.state != 4:
-            self.image.clip_draw((self.frame * 100), (self.state* 100), 100, 100, self.x, self.y)
+            self.image.clip_draw((self.frame * 100), (self.state* 100), 95, 95, self.x, self.y)
 def enter():
     global boy, wall, back, team,life, bgm, font, team1
     boy = Boy()
